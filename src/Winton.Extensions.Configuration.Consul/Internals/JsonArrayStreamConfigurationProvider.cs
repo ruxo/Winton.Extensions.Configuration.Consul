@@ -6,14 +6,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Winton.Extensions.Configuration.Consul.Internals
 {
-  internal sealed class JsonArrayStreamConfigurationProvider : StreamConfigurationProvider
+  internal sealed class JsonArrayStreamConfigurationProvider(JsonArrayStreamConfigurationSource source) : StreamConfigurationProvider(source)
   {
-    public JsonArrayStreamConfigurationProvider(JsonArrayStreamConfigurationSource source)
-      : base(source)
-    {
-    }
-
-    /// <inheritdoc />
+      /// <inheritdoc />
     /// <summary>
     ///     Loads JSON configuration key/values from a stream into a provider.
     /// </summary>
